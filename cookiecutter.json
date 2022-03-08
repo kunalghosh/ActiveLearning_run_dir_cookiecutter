@@ -1,0 +1,12 @@
+{
+	"full_name": "Kunal Ghosh",
+	"email": "kunal.ghosh@aalto.fi",
+	"github_username": "kunalghosh",
+    "project_name": "AL_dataset_runs",
+	"project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+	"project_short_description": "Boilerplate to create run directories for Active Learning for Molecular datasets.",
+	"dataset": ["AA", "OE", "QM9"],
+	"batchsize": ["1k","2k","4k","8k","EXP"],
+	"strategy": ["A","D"],
+	"homo_names": {"OE": "mbtr_0.02.npz", "QM9": "mbtr_0.1.npz", "AA": "mbtr_k2.npz"}
+}
