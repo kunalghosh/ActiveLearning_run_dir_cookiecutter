@@ -1,5 +1,6 @@
 import os
 import shutil
+from pathlib import Path
 
 random_seeds = [1234,2345,3456,4567,5678]
 input_template = ""
@@ -9,9 +10,10 @@ with open("{{cookiecutter.dataset}}_{{cookiecutter.strategy}}_{{cookiecutter.bat
 print("Copying {{cookiecutter.dataset}}_{{cookiecutter.strategy}}_{{cookiecutter.batchsize}}/slurm_compute_mae.sh to each of the run directories.")
 for idx, _dir in enumerate("run1 run2 run3 run4 run5".split()):
     shutil.copy("{{cookiecutter.dataset}}_{{cookiecutter.strategy}}_{{cookiecutter.batchsize}}/slurm_compute_mae.sh",
-                f"{{cookiecutter.dataset}}_{{cookiecutter.strategy}}_{{cookiecutter.batchsize}}/{_dir}/")
+                f"{{cookiecutter.dataset}}_{{cookiecutter.strategy}}_{{cookiecutter.batchsize}}/{_dir}")
     print(f"Copied to {_dir}")
-    with open(f"{{cookiecutter.dataset}}_{{cookiecutter.strategy}}_{{cookiecutter.batchsize}}/{_dir}/input.dat","w") as f:
+    p = Path(f"{{cookiecutter.dataset}}_{{cookiecutter.strategy}}_{{cookiecutter.batchsize}}/{_dir}/input.dat")
+    with open(p,"w+") as f:
         f.write(input_template.replace("{random_seed}",str(random_seeds[idx])))
     print(f"Copied input.dat2 to {_dir}")
 
