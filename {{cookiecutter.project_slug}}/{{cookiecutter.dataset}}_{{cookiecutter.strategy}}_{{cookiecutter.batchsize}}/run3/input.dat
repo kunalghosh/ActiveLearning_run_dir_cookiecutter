@@ -1,0 +1,7 @@
+{% include '../input_top.j2' %}
+random_seed             3456
+
+{% include '../input_mid.j2' %}
+{% include '../input_idxs.j2' %}
+
+{% include '../input_bottom.j2' %}
