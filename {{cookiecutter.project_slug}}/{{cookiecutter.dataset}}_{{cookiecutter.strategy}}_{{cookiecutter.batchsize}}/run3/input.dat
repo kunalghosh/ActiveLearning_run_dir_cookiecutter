@@ -1,7 +1,50 @@
-{% include '../input_top.j2' %}
+{%- set _dataset_size={"AA": "44004", "OE":"64710", "QM9":"133814"} -%}
+{%- set _mbtrs={"AA": "mbtr_k2.npz", "OE":"mbtr_0.02.npz", "QM9":"mbtr_1.1.npz"} -%}
+{%- set _sets={"run1": "1234", "run2":"2345", "run3":"3456", "run4":"4567", "run5":"5678"} -%}
+{%- set _fn_name={"A": "rnd2", "D": "high_and_cluster"} -%}
+{%- set batchsize_to_num = {"1k":1, "2k":2, "4k":4, "8k":8} -%}
+
+{%- set batchsize = batchsize_to_num[cookiecutter.batchsize] -%}
+{%- if cookiecutter.batchsize == "EXP" -%}
+{%- set batches=[1,2,4,8,16] -%}
+{%- else -%}
+{%- set batches=[batchsize]*(16//batchsize) -%}
+{%- endif -%}
+#condtidion
+fn_name                 {{_fn_name[cookiecutter.strategy]}} 
+out_name                {{cookiecutter.dataset}}-{{cookiecutter.strategy}}-{{cookiecutter.batchsize}}
+dataset                 {{cookiecutter.dataset}}
+dataset_size            {{_dataset_size[cookiecutter.dataset]}}
+test_set_size           10000
+rnd_size                2.0
+K_high                  100
 random_seed             3456
 
-{% include '../input_mid.j2' %}
-{% include '../input_idxs.j2' %}
+#preprocess
+mbtr_red                False
+preprocess               none
 
-{% include '../input_bottom.j2' %}
+#kernel
+kernel_type             constRBF
+length                  700
+const                   20
+bound                   1e2
+n_opt                   2
+
+#flag
+save_load_flag          save
+save_load_split_flag    False
+restart_flag            False
+
+#trainsize
+num_itr    {{ batches|length}}
+pre_idxs_0    1000
+{%- for batch in batches %}
+pre_idxs_{{loop.index}}    {{batch*1000}}
+{%- endfor %}
+
+#path
+mbtr_path              ../../../../../../MFGP_data/{{cookiecutter.dataset}}/{{_mbtrs[cookiecutter.dataset]}}
+json_path              ../../../../../../MFGP_data/{{cookiecutter.dataset}}/HOMO.txt
+loadidxs_path          ../../../../../../MFGP_data/{{cookiecutter.dataset}}_derived/10K_dataset_load_high/10Kloadhigh2_0_idxs.npz
+loadsplitidxs_path     ../../../../../../MFGP_data/{{cookiecutter.dataset}}_derived/10K_dataset_load_high/10Kdataset_dataset_split_idxs.npz
