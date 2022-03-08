@@ -8,5 +8,4 @@
 	"dataset": ["AA", "OE", "QM9"],
 	"batchsize": ["1k","2k","4k","8k","EXP"],
 	"strategy": ["A","D"],
-	"homo_names": {"OE": "mbtr_0.02.npz", "QM9": "mbtr_0.1.npz", "AA": "mbtr_k2.npz"}
 }
