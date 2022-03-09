@@ -19,9 +19,9 @@ print(f"iteration {iteration}"
         f"dataset {dataset}"
         f"mbtr_filename mbtr_filename")
 
-test_idxs = np.load(f"test-{strategy}-{batch_size}_{iteration}_full_idxs.npz")['test_idxs']
+test_idxs = np.load(f"{dataset}-{strategy}-{batch_size}_{iteration}_full_idxs.npz")['test_idxs']
 
-gp = joblib.load(f"test-{strategy}-{batch_size}_{iteration}_model.pkl")
+gp = joblib.load(f"{dataset}-{strategy}-{batch_size}_{iteration}_model.pkl")
 
 mbtr_path = f"/projappl/project_2000382/ghoshkun/data/{dataset}/{mbtr_filename[dataset]}"
 json_path = f"/projappl/project_2000382/ghoshkun/data/{dataset}/HOMO.txt"
