@@ -11,7 +11,7 @@
 {%- set batches=[batchsize]*(16//batchsize) -%}
 {%- endif -%}
 #condtidion
-fn_name                 {{_fn_name[cookiecutter.strategy]}} 
+fn_name                 {{_fn_name[cookiecutter.strategy]}}
 out_name                {{cookiecutter.dataset}}-{{cookiecutter.strategy}}-{{cookiecutter.batchsize}}
 dataset                 {{cookiecutter.dataset}}
 dataset_size            {{_dataset_size[cookiecutter.dataset]}}
