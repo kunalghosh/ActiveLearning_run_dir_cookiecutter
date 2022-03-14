@@ -1,7 +1,7 @@
 {%- set _dataset_size={"AA": "44004", "OE":"64710", "QM9":"133814"} -%}
 {%- set _mbtrs={"AA": "mbtr_k2.npz", "OE":"mbtr_0.02.npz", "QM9":"mbtr_1.1.npz"} -%}
 {%- set _sets={"run1": "1234", "run2":"2345", "run3":"3456", "run4":"4567", "run5":"5678"} -%}
-{%- set _fn_name={"A": "rnd2", "D": "high_and_cluster"} -%}
+{%- set _fn_name={"A": "rnd2", "B": "high2", "C": "cluster", "D": "high_and_cluster"} -%}
 {%- set batchsize_to_num = {"1k":1, "2k":2, "4k":4, "8k":8} -%}
 
 {%- set batchsize = batchsize_to_num[cookiecutter.batchsize] -%}

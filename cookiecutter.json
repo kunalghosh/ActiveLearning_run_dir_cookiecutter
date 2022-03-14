@@ -7,5 +7,5 @@
 	"project_short_description": "Boilerplate to create run directories for Active Learning for Molecular datasets.",
 	"dataset": ["AA", "OE", "QM9"],
 	"batchsize": ["1k","2k","4k","8k","EXP"],
-	"strategy": ["A","D"]
+	"strategy": ["A", "B", "C", "D"]
 }
