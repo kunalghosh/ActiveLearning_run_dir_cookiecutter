@@ -41,4 +41,4 @@ export PROJAPPL=/projappl/project_2000382
 # cd ${dirs[$SLURM_ARRAY_TASK_ID]}
 # srun ../main.sh $(cut -d / -f3 "${dirs[$SLURM_ARRAY_TASK_ID]}") input.dat
 # run_num=`cut -d / -f10 | pwd`
-srun run_getmae.sh ${dirs[$SLURM_ARRAY_TASK_ID]} {{cookiecutter.strategy}} {{cookiecutter.batchsize}} {{cookiecutter.dataset}}
+srun ../run_getmae.sh ${dirs[$SLURM_ARRAY_TASK_ID]} {{cookiecutter.strategy}} {{cookiecutter.batchsize}} {{cookiecutter.dataset}}
