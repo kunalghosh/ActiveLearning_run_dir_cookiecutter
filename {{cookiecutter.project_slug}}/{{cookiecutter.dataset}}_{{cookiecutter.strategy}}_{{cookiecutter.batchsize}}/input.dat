@@ -31,7 +31,7 @@ const                   20
 bound                   1e2
 n_opt                   2
 alpha                   0.05
-normalize_y             True
+normalize_y             False
 
 #flag
 save_load_flag          save
