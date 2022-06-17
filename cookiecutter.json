@@ -9,6 +9,6 @@
   "dataset": ["AA", "OE", "QM9"],
   "batchsize": ["10", "100","1k","2k","4k","8k","EXP"],
   "strategy": ["A", "B", "C", "D", "E", "F", "G", "H"],
-  "target_low": ["none", "preselected"],
-  "target_high": ["none", "preselected"]
+  "range_low": ["none", "preselected"],
+  "range_high": ["none", "preselected"]
 }

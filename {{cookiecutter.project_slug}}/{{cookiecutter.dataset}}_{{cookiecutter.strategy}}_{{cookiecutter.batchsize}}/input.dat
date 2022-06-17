@@ -35,11 +35,11 @@ bound                   1e2
 n_opt                   2
 alpha                   0.05
 normalize_y             False
-{% if cookiecutter.target_low != "none" -%}
-target_low              {{target_low_defaults[cookiecutter.dataset]}}
+{% if cookiecutter.range_low != "none" -%}
+range_low              {{target_low_defaults[cookiecutter.dataset]}}
 {% endif -%}
-{% if cookiecutter.target_high != "none" -%}
-target_high              {{target_high_defaults[cookiecutter.dataset]}}
+{% if cookiecutter.range_high != "none" -%}
+range_high              {{target_high_defaults[cookiecutter.dataset]}}
 {% endif -%}
 
 
