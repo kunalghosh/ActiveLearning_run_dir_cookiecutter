@@ -7,6 +7,8 @@
 	"project_short_description": "Boilerplate to create run directories for Active Learning for Molecular datasets.",
 	"data_path": "/projappl/project_2000382/ghoshkun//data",
 	"dataset": ["AA", "OE", "QM9"],
-	"batchsize": ["100","1k","2k","4k","8k","EXP"],
-	"strategy": ["A", "B", "C", "D", "E", "F", "G"]
+	"batchsize": ["10", "100","1k","2k","4k","8k","EXP"],
+	"strategy": ["A", "B", "C", "D", "E", "F", "G", "H"],
+  "target_low": ["none", "preselected"],
+  "target_high": ["none", "preselected"]
 }
