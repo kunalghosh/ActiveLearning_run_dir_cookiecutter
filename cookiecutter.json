@@ -8,7 +8,7 @@
   "data_path": "/projappl/project_2000382/ghoshkun//data",
   "dataset": ["AA", "OE", "QM9"],
   "batchsize": ["10", "100","1k","2k","4k","8k","EXP"],
-  "strategy": ["A", "B", "C", "D", "E", "F", "G", "H"],
+  "strategy": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
   "range_low": ["none", "preselected"],
   "range_high": ["none", "preselected"]
 }
