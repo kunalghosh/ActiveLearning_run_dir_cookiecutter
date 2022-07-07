@@ -3,7 +3,7 @@
 {%- set _sets={"run1": "1234", "run2":"2345", "run3":"3456", "run4":"4567", "run5":"5678"} -%}
 {%- set _fn_name={"A": "rnd2", "B": "high2", "C": "cluster", "D": "high_and_cluster", "E": "high_and_cluster_highest", "F": "high_and_random", "G": "cluster_highest", "H": "mean_pred", "I": "mean_pred_with_uncertainty"} -%}
 {%- set batchsize_to_num = {"10":0.01, "100":0.1, "1k":1, "2k":2, "4k":4, "8k":8} -%}
-{%- set target_low_defaults = {"AA":-8.5, "OE":-5.55, "QM9":-5.2} -%}
+{%- set target_low_defaults = {"AA":-8.5, "OE":-5.2, "QM9":-5.55} -%}
 {%- set target_high_defaults = {"AA":0, "OE":0, "QM9":0} -%}
 
 {%- set batchsize = batchsize_to_num[cookiecutter.batchsize] -%}
