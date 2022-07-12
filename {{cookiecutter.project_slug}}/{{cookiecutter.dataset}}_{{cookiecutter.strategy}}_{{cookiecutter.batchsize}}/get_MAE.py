@@ -30,7 +30,9 @@ mbtr_data = load_npz(mbtr_path)
 homo_lowfid = np.loadtxt(json_path)
 
 X_test = mbtr_data[test_idxs, :].toarray(); y_test = homo_lowfid[test_idxs]
-mu_s, std_s = gp.predict(X_test, return_std=True)
+# mu_s, std_s = gp.predict(X_test, return_std=True)
+mu_s = gp.predict(X_test, return_std=False)
 
+np.save(f"{dataset}-{strategy}-{batch_size}_{iteration}_testset_predictions.npz", mu_s)
 MAE = np.array(mean_absolute_error(y_test, mu_s))
 print(f"{iteration} {MAE}")
